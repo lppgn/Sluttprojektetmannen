@@ -10,6 +10,7 @@ namespace Slutprojekt
         public int position = 0;
         public int cash = 1000;
         public int prisonCard = 0;
+        public bool inPrison = false;
         public Dictionary<int, boardSquare> boardSquaresOwned = new Dictionary<int, boardSquare>();
 
         public Player(string name, int i)
