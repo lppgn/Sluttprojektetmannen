@@ -10,7 +10,7 @@ namespace Slutprojekt
             randomInt = cardRandomizer.Next(1,11);
             System.Console.WriteLine(dict[randomInt].text);
             if(dict[randomInt].value == 0){
-                //aPlayer.inPrison = true;
+                aPlayer.inPrison = true;
                 aPlayer.position = 10;
             }
             else if(dict[randomInt].value == 100){
