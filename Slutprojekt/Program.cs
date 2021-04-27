@@ -8,8 +8,10 @@ namespace Slutprojekt
         {
             Console.WriteLine("Hello World!");
             var chance = new chanceCard();
-
-
+            var walla = new Player("ider", 1);
+            walla.inPrison = true;
+            walla.diceRoll();
+            System.Console.WriteLine(walla.inPrison + "--" + walla.cash);
             Random generator = new Random();
             int bruh = generator.Next(1,10);
 
