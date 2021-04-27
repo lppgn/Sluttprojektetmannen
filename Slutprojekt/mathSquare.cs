@@ -2,7 +2,7 @@ using System;
 
 namespace Slutprojekt
 {
-    public class mathSquare
+    public class MathSquare
     {
         private int valueVariable = 4;
 

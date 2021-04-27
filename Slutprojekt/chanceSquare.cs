@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 namespace Slutprojekt
 {
-    public class chanceSquare
+    public class ChanceSquare
     {
         static Random cardRandomizer = new Random();
         static int randomInt = 0;

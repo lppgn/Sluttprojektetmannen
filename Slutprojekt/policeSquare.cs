@@ -2,7 +2,7 @@ using System;
 
 namespace Slutprojekt
 {
-    public class policeSquare
+    public class PoliceSquare
     {
         
         public void landedOnPoliceSquare(Player aPlayer){
