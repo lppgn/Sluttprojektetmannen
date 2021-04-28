@@ -2,7 +2,7 @@ using System;
 
 namespace Slutprojekt
 {
-    public class boardSquare
+    public class BoardSquare
     {
         public int position = 0;
     }

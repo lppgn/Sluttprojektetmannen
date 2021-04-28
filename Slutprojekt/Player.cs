@@ -12,7 +12,7 @@ namespace Slutprojekt
         public string readAnswer = "";
         public int prisonCard = 0;
         public bool inPrison = false;
-        public Dictionary<int, boardSquare> boardSquaresOwned = new Dictionary<int, boardSquare>();
+        public Dictionary<int, BoardSquare> boardSquaresOwned = new Dictionary<int, BoardSquare>();
 
         public Player(string name, int i)
         {
@@ -37,7 +37,9 @@ namespace Slutprojekt
                         position += dice.diceValue1 + dice.diceValue2;
                         if (position > 40)
                         {
+                            System.Console.WriteLine("You passed start and recieved 200$");
                             position -= 40;
+                            cash += 200;
                         }
                         System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2  + " so you are now on square " + position);
                         break;
@@ -51,6 +53,11 @@ namespace Slutprojekt
                         {
                             inPrison = false;
                             position += dice.diceValue2 + dice.diceValue1;
+                            if(position > 40){
+                                position -= 40;
+                                System.Console.WriteLine("You passed start and recieved 200$");
+                                cash += 200;
+                            }
                         }
                         System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2  + "  yosou are now on square " + position);
                         break;
@@ -69,6 +76,8 @@ namespace Slutprojekt
                 if (position > 40)
                 {
                     position -= 40;
+                    System.Console.WriteLine("You passed start and recieved 200$");
+                    cash += 200;
                 }
                 System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2  + " so you are now on square " + position);
             }
