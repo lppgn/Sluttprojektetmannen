@@ -6,17 +6,17 @@ namespace Slutprojekt
     {
         public Dice dice = new Dice();
         static Dictionary<int, Player> players = new Dictionary<int, Player>();
-        public string Name = "";
+        public string name = "";
         public int position = 0;
         public int cash = 1000;
         public string readAnswer = "";
         public int prisonCard = 0;
         public bool inPrison = false;
-        public Dictionary<int, BoardSquare> boardSquaresOwned = new Dictionary<int, BoardSquare>();
+        public Dictionary<int, PropertySquare> boardSquaresOwned = new Dictionary<int, PropertySquare>();
 
         public Player(string name, int i)
         {
-            this.Name = name;
+            this.name = name;
             players.Add(i, this);
         }
         public void diceRoll()

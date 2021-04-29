@@ -4,6 +4,6 @@ namespace Slutprojekt
 {
     public class PropertySquare: BoardSquare
     {
-        public bool Owned = false;
+        public bool owned = false;
     }
 }

@@ -10,7 +10,7 @@ namespace Slutprojekt
             i=0;
             foreach (var item in aPlayer.boardSquaresOwned)
             {
-                if(item.Value.ToString() == "Slutprojekt.StationSquare"){
+                if(item.Value == this){
                     i++;
                     System.Console.WriteLine("funkar walla" + i);
                 }
