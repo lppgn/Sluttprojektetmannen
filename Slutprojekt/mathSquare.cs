@@ -2,12 +2,10 @@ using System;
 
 namespace Slutprojekt
 {
-    public class MathSquare
+    public class MathSquare: BoardSquare
     {
-        private int valueVariable = 4;
-
         public void landedOnMathSquare(int diceValue, Player aPlayer){
-            aPlayer.cash -= valueVariable*diceValue;
+            aPlayer.cash -= cost*diceValue;
         }
     }
 }

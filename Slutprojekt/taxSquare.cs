@@ -2,11 +2,10 @@ using System;
 
 namespace Slutprojekt
 {
-    public class TaxSquare
+    public class TaxSquare: BoardSquare
     {
-        public int taxAmount = 200;
         public void landedOnTaxSquare(Player aPlayer){
-            aPlayer.cash -= taxAmount;
+            aPlayer.cash -= cost;
         }
     }
 }

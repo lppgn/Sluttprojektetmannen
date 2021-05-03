@@ -5,7 +5,7 @@ namespace Slutprojekt
     public class Player
     {
         public Dice dice = new Dice();
-        static Dictionary<int, Player> players = new Dictionary<int, Player>();
+        public static Dictionary<int, Player> players = new Dictionary<int, Player>();
         public string name = "";
         public int position = 0;
         public int cash = 1000;
@@ -18,6 +18,10 @@ namespace Slutprojekt
         {
             this.name = name;
             players.Add(i, this);
+        }
+        public void boughtProperty(PropertySquare aProperty){
+            aProperty.ownedBy = this.name;
+            this.boardSquaresOwned.Add(1, aProperty);
         }
         public void diceRoll()
         {

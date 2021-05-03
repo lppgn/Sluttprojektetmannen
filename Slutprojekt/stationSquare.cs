@@ -1,21 +1,20 @@
 using System;
+using System.Collections.Generic;
 
 namespace Slutprojekt
 {
     public class StationSquare: PropertySquare
     {
-        public int i = 0;
-        public int cost = 50;
         public void landedOnStationSquare(Player aPlayer){
-            i=0;
-            foreach (var item in aPlayer.boardSquaresOwned)
+            ownedOfType=0;
+            foreach (KeyValuePair<int, PropertySquare> item in aPlayer.boardSquaresOwned)
             {
                 if(item.Value == this){
-                    i++;
-                    System.Console.WriteLine("funkar walla" + i);
+                    ownedOfType++;
+                    System.Console.WriteLine("funkar walla" + ownedOfType);
                 }
             }
-            aPlayer.cash -= cost*i;
+            aPlayer.cash -= cost*ownedOfType;
         }
     }
 }
