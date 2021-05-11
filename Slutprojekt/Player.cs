@@ -19,11 +19,12 @@ namespace Slutprojekt
             this.name = name;
             players.Add(i, this);
         }
-        public void boughtProperty(PropertySquare aProperty){
+        public void BoughtProperty(PropertySquare aProperty)
+        {
             aProperty.ownedBy = this.name;
             this.boardSquaresOwned.Add(1, aProperty);
         }
-        public void diceRoll()
+        public void DiceRoll()
         {
             if (inPrison == true)
             {
@@ -36,8 +37,7 @@ namespace Slutprojekt
                     {
                         cash -= 50;
                         inPrison = false;
-                        dice.diceValue1 = dice.randomDice.Next(1, 7);
-                        dice.diceValue2 = dice.randomDice.Next(1, 7);
+                        this.dice.RollDice();
                         position += dice.diceValue1 + dice.diceValue2;
                         if (position > 40)
                         {
@@ -45,28 +45,29 @@ namespace Slutprojekt
                             position -= 40;
                             cash += 200;
                         }
-                        System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2  + " so you are now on square " + position);
+                        System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2 + " so you are now on square " + position);
                         break;
                     }
                     else if (readAnswer == "n" || readAnswer == "N")
                     {
                         System.Console.WriteLine("You chose not to pay");
-                        dice.diceValue1 = dice.randomDice.Next(1, 7);
-                        dice.diceValue2 = dice.randomDice.Next(1, 7);
+                        this.dice.RollDice();
                         if (dice.diceValue1 == dice.diceValue2)
                         {
                             inPrison = false;
                             position += dice.diceValue2 + dice.diceValue1;
-                            if(position > 40){
+                            if (position > 40)
+                            {
                                 position -= 40;
                                 System.Console.WriteLine("You passed start and recieved 200$");
                                 cash += 200;
                             }
                         }
-                        System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2  + "  yosou are now on square " + position);
+                        System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2 + "  yosou are now on square " + position);
                         break;
                     }
-                    else{
+                    else
+                    {
                         System.Console.WriteLine("You did not answer with y or n");
                     }
                 }
@@ -74,8 +75,7 @@ namespace Slutprojekt
             }
             else
             {
-                dice.diceValue1 = dice.randomDice.Next(1, 7);
-                dice.diceValue2 = dice.randomDice.Next(1, 7);
+                this.dice.RollDice();
                 position += dice.diceValue2 + dice.diceValue1;
                 if (position > 40)
                 {
@@ -83,7 +83,7 @@ namespace Slutprojekt
                     System.Console.WriteLine("You passed start and recieved 200$");
                     cash += 200;
                 }
-                System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2  + " so you are now on square " + position);
+                System.Console.WriteLine("you rolled a " + dice.diceValue1 + " and a " + dice.diceValue2 + " so you are now on square " + position);
             }
         }
     }

@@ -10,7 +10,6 @@ namespace Slutprojekt
         public Dictionary<int, (string text, int value)> chanceCardDictionary = new Dictionary<int, (string text, int value)>();
         public chanceCard()
         {
-
             using (StreamReader reader = new StreamReader("Bok1.csv"))
             {
                 string line;
@@ -19,8 +18,8 @@ namespace Slutprojekt
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] parts = line.Split(';');
-                    bool try1 = int.TryParse(parts[0], out indexNumber);
-                    try1 = int.TryParse(parts[2], out chanceCost);
+                    indexNumber = int.Parse(parts[0]);
+                    chanceCost = int.Parse(parts[2]);
                     chanceCardDictionary.Add(indexNumber, (parts[1], chanceCost));
                 }
             }
